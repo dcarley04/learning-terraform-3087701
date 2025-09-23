@@ -14,13 +14,13 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-data "aws_vpc" "default-vpc" {
+data "aws_vpc" "default_vpc" {
   default = true
 }
 
 resource "aws_instance" "web_blog" {
-  ami           = data.aws_ami.app_ami.id
-  instance_type = var.instance_type
+  ami                    = data.aws_ami.app_ami.id
+  instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.web_blog_sg.id]
   
   tags = {
@@ -35,7 +35,7 @@ resource "aws_security_group" "web_blog_sg" {
   tags = {
     Terraform = true
   }
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.default_vpc.id
 }
 
 resource "aws_security_group_rule" "web_blog_sgr_http_in" {
