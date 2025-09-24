@@ -51,12 +51,12 @@ module "web_blog_sg_new" {
 #}
 
 #resource "aws_security_group_rule" "web_blog_sgr_http_in" {
-  type        = "ingress"
-  from_port   = 80
-  to_port     = 80
-  protocol    = "tcp"
-  cidr_blocks = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.web_blog_sg.id
+#  type        = "ingress"
+#  from_port   = 80
+#  to_port     = 80
+#  protocol    = "tcp"
+#  cidr_blocks = ["0.0.0.0/0"]
+#  security_group_id = aws_security_group.web_blog_sg.id
 #}
 
 #resource "aws_security_group_rule" "web_blog_sgr_https_in" {
