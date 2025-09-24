@@ -43,12 +43,12 @@ module "web_blog_sg_new" {
 }
 
 #resource "aws_security_group" "web_blog_sg" {
-  name        = "web_blog_sg"
-  tags        = {
-    Terraform = "true"
-  }
-  vpc_id = data.aws_vpc.default_vpc.id
-}
+#  name        = "web_blog_sg"
+#  tags        = {
+#    Terraform = "true"
+#  }
+#  vpc_id = data.aws_vpc.default_vpc.id
+#}
 
 #resource "aws_security_group_rule" "web_blog_sgr_http_in" {
   type        = "ingress"
