@@ -45,7 +45,7 @@ module "blog_asg" {
   launch_template_description = "Blog Launch Template"
   update_default_version = true
 
-  #lb_target_group_arn = module.blog_alb.target_group_arns
+  lb_target_group_arn = module.blog_alb.target_group_arns
   security_groups     = [module.blog_sg.security_group_id]
   instance_type       = var.instance_type
   image_id            = data.aws_ami.app_ami.id
