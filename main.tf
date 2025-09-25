@@ -43,9 +43,9 @@ module "blog_autoscaling" {
 
   launch_template_name = "blog-lt"
   launch_template_description = "Blog Launch Template"
-  target_group_arns = module.blog_alb.target_group_arns
+  #target_group_arns = module.blog_alb.target_group_arns
+  lb_target_group_arns = module.blog_alb.target_group_arns
   #lb_target_group_arn = module.blog_alb.target_group_arns
-  #lb_target_group_arns = module.blog_alb.target_group_arns
   security_groups     = [module.blog_sg.security_group_id]
   instance_type       = var.instance_type
   image_id            = data.aws_ami.app_ami.id
